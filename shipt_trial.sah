@@ -1,0 +1,124 @@
+var $siteUrl = "https://www.shipt.com";
+var $testEmail = "testmail@gmail.com";
+var $testZip = "35205";
+var $testPhone = "1234567891";
+	
+/**
+* Varify all filelds/links present on 'get statred page'
+*/
+	function GetStartedValidation(){
+		_assertVisible(_emailbox("email"));
+		_assertVisible(_telephonebox("zip"));
+		_assertVisible(_heading1("/get started/"));
+		_assertVisible(_submit("Go"));
+		_assertVisible(_link("Click here to login"));
+		_assertVisible(_link("Click here"));
+	}
+
+/**
+* Verify appearence of filelds for Users who have  already account or Membership Code
+*/
+function HaveAccountOrCode(){
+	_click(_link("Click here to login"));
+	_assertVisible(_link("Forgot Your Password?"));
+	_assertVisible(_submit("Login"));
+	_click(_link("Get Started Here"));
+	_assertNotVisible(_link("Forgot Your Password?"));
+	_assertNotVisible(_submit("Login"));
+	_assertVisible(_submit("Go"));
+	_click(_link("Click here"));
+	_assertVisible(_textbox("giftCode"));
+}
+
+/**
+* Verify Email/Zip/Membership fileds validation
+*/
+function ValidateEmailZipCode(){
+	_click(_submit("Go"));
+	_assertVisible(_emailbox("/ng-valid-email ng-invalid/"));
+	_setValue(_emailbox("email"), $testEmail);
+	_click(_submit("Go"));
+	_assertNotVisible(_emailbox("/ng-invalid-required/"));
+	_click(_submit("Go"));
+	_assertVisible(_telephonebox("/form-control ng-pristine/"));
+	_click(_submit("Go"));
+	_setValue(_telephonebox("zip"), $testZip);
+	_assertNotVisible(_telephonebox("/form-control ng-pristine/"));
+	_setValue(_textbox("giftCode"), "1234567890");
+	_click(_submit("Redeem Code"));
+	_assertVisible(_paragraph("/enter a valid/"));
+	//_assertVisible(_submit("Loading..."));
+	_setValue(_textbox("giftCode"), "");
+	_assertVisible(_submit("Go"));
+	_click(_submit("Go"));
+}
+
+/**
+* Validation of Account Info form
+* for Full Name/Phone/Password/Payment
+*/
+function AccountFormValidation(){
+	_assertVisible(_heading3("Account Info"));
+	_assertVisible(_textbox("name"));
+	_assertVisible(_telephonebox("phone"));
+	_assertVisible(_password("password"));
+	_assertVisible(_heading3("Payment Info"));
+	_selectDomain("js.stripe.com");
+	_assertVisible(_telephonebox("cardnumber"));
+	_assertVisible(_telephonebox("exp-date"));
+	_assertVisible(_textbox("Postal code"));
+	_selectDomain();
+	_assertVisible(_submit("Start Membership"));
+	_assertVisible(_textbox("/form-control/", _near(_submit("Start Membership"))));
+	_assertVisible(_link("Terms of Service"));
+	_assertVisible(_paragraph("/you agree/", _near(_link("Terms of Service"))));
+	_click(_submit("Start Membership", _near(_link("Terms of Service"))));
+	_assertVisible(_paragraph("/Name cannot/"));
+	_setValue(_textbox("name"), "qa");
+	_click(_submit("Start Membership"));
+	_assertVisible(_paragraph("/Phone cannot/"));
+	_setValue(_telephonebox("phone"), $testPhone);
+	_click(_submit("Start Membership"));
+	_assertVisible(_paragraph("/Password must/"));
+	_setPassword(_password("password"), "EQ0aEBJPGwo=");
+	_click(_submit("Start Membership"));
+	_assertVisible(_paragraph("/card number/"));
+}
+
+/**
+* ChoosePlan()
+*/
+function ChoosePlan(){
+	_assertVisible(_heading4("/Free for 2/"));
+	_assertVisible(_heading4("/Monthly Plan/"));
+	_assertVisible(_heading3("Membership Benefits"));
+	_assertVisible(_heading3("Annual Plan", _near(_heading4("/Free for 2/"))));
+	_assertVisible(_heading3("Monthly Plan", _near(_heading4("/Monthly Plan/"))));
+}
+
+/* --Functions Above-- */
+
+_navigateTo($siteUrl);
+
+_assertVisible(_heading5("Try two weeks free!"));
+
+_click(_heading5("Try two weeks free!"));
+_assertVisible(_header("/Shipt/"));
+
+GetStartedValidation();
+
+HaveAccountOrCode();
+
+ValidateEmailZipCode();
+
+ChoosePlan();
+
+
+_click(_heading4("Try Free for 2 Weeks!"));
+AccountFormValidation();
+
+_call(history.back());
+
+_click(_heading4("Choose Monthly Plan"));
+AccountFormValidation();
+
