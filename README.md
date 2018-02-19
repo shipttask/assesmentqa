@@ -54,8 +54,8 @@ or the direct link http://sahipro.com/static/builds/pro/install_sahi_pro_v750_20
 2. Istall Sahi Test Framework, after first run install the license  (license.data).
 3. Put the file shipt_trial.sah into /sahi_pro/userdata/scripts folder
 4. Start testrunner.sh with these parameters:
-./testrunner.sh shipt_trial.sah https://google.com firefox  (trial_testrunner.gif)
-5. After the test scipt finishes, navigate to Sahi Logs to verify results.
+./testrunner.sh shipt_trial.sah https://google.com firefox  (trial_testrunner.gif).
+5. After the test scipt finishes, navigate to Sahi Logs to verify results (Reports_archive.zip).
 
 # 6.
 I selected Sahi Test framework because it is a straightforward testing tool to maintain, develop, run and debug test scripts. Sahi is written on Java and can be run on all platforms. Sahi supports recording steps and provides plenty of predefined slectors, so it is easy to write test scripts on a fly. Sahi uses modified JavaScript and supports REST API. Sahi and generates usefull reports, i.e., in case of found issue, Sahi conveniently makes screenshots. No need to define wait statements for AJAX, it's done in the framework itself. All scripts can be run in parallel which reduces time spent on running.
