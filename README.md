@@ -1,6 +1,6 @@
 # 1.
 Navigate to www.shipt.com and perform 'Get started' feature forms, fields and links validation.
-1. Steps written into GetStartedFormsValidation.txt
+1. Steps written into https://github.com/shipttask/assesmentqa/blob/master/GetStartedFormsValidation.txt
 
 
 # 2.
