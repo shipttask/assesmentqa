@@ -5,7 +5,7 @@ var $testPhone = "1234567891";
 var $testCode = ""0123456789;
 	
 /**
-* Varify all fields/links present on 'get statred page'
+* Verify all fields/links present on 'get statred page'
 */
 	function GetStartedValidation(){
 		_assertVisible(_emailbox("email"));
