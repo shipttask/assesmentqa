@@ -14,9 +14,11 @@ Steps to reproduce:
  * 4. Srart typing email address and click 'Submit' button.
  
 Expected behavior:
+
 Entering/Edition email address should be without issues. After an email submission, a notification message about successfull action should appear. Submit button and email field should have rounded edges.
 
 Actual behavior:
+
 While typing an email address, a cursor appears under the email field, but not in the filed as expected. No notification message appears afted email sumbission. Submit button and Email field do not have rounded edges in contrast to all buttons and fields whithin the app.
 
 2. iOS Native app: Select Store navigation issue (iOS_app_navigation_issue.MP4)
@@ -29,10 +31,12 @@ Steps to reproduce:
   * 5. Select any other store
   
  Expected behavior:
- New Store selected. All catagories are alligned from the  top.
+
+New Store selected. All catagories are alligned from the  top.
  
  Actual behavior:
- Store is selected, but Categories are not alligned from the top. They are in the middle position as it was in previos Store.
+
+Store is selected, but Categories are not alligned from the top. They are in the middle position as it was in previos Store.
  
 # 3.
 1st bug - priority is 4. 2nd bug priority is 4. Both bugs are UI and ussability issues. 
