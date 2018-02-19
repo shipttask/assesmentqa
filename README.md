@@ -1,8 +1,10 @@
-# Navigate to www.shipt.com and perform 'Get started' feature forms, fields and links validation.
+# 1.
+Navigate to www.shipt.com and perform 'Get started' feature forms, fields and links validation.
 1. Steps written into GetStartedFormsValidation.txt
 
 
-# Found 2 bugs with iOS web application and iOS native application.
+# 2.
+Found 2 bugs with iOS web application and iOS native application.
 1. iOS Safari: Get Started Email filed edition issue (iOS_safari_email_field_issue.MP4)
 Steps to reproduce:
  * 1. Navigate to www.shipt.com in Safari browser for iOS
@@ -26,14 +28,17 @@ Steps to reproduce:
  Actual behavior:
  Store is selected, but Categories are not alligned from the top. They are in the middle position as it was in previos Store.
  
-# 1st bug - priority is 4. 2nd bug priority is 4. Both bugs are UI and ussability issues. 
+# 3.
+1st bug - priority is 4. 2nd bug priority is 4. Both bugs are UI and ussability issues. 
 
 
-# Customers table relates to Orders table like '1 to many'. Shoppers table relates to Orders table like '1 to many'. (tables_relations.pdf)
+# 4.
+Customers table relates to Orders table like '1 to many'. Shoppers table relates to Orders table like '1 to many'. (tables_relations.pdf)
 SQL query to select ID and Store tied to a specific Customer and Shopper in 'IDandSTORE.sql' script. Visualisation in 'sql_select.PNG'.
 
 
-# Run GetStarted forms verificaion automation.
+# 5.
+Run GetStarted forms verificaion automation.
 1. Download Sahi framework from http://sahipro.com/
 or the direct link http://sahipro.com/static/builds/pro/install_sahi_pro_v750_20171222.jar
 2. Istall Sahi Test Framework, after first run install the license  (license.data).
@@ -42,4 +47,5 @@ or the direct link http://sahipro.com/static/builds/pro/install_sahi_pro_v750_20
 ./testrunner.sh shipt_trial.sah https://google.com firefox
 5. After the test scipt finishes, navigate to Sahi Logs to verify results.
 
-# I selected Sahi Test framework because it is a straightforward testing tool to maintain develop run and debug test scripts. It is written on Java and can be run on all platforms. It supports recording steps and provides plenty of predefined slectors, so its easy to write test scripts on a fly. It uses modified JavaScript. It generates usefull reports. In case of found issue it makes screenshots. It suports REST API. No need to define wait statements for AJAX, it's done in the framework itself. All scripts can be run in parallel which reduces time spent on running.
+# 6.
+I selected Sahi Test framework because it is a straightforward testing tool to maintain develop run and debug test scripts. It is written on Java and can be run on all platforms. It supports recording steps and provides plenty of predefined slectors, so its easy to write test scripts on a fly. It uses modified JavaScript. It generates usefull reports. In case of found issue it makes screenshots. It suports REST API. No need to define wait statements for AJAX, it's done in the framework itself. All scripts can be run in parallel which reduces time spent on running.
