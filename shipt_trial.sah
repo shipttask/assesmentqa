@@ -2,9 +2,10 @@ var $siteUrl = "https://www.shipt.com";
 var $testEmail = "testmail@gmail.com";
 var $testZip = "35205";
 var $testPhone = "1234567891";
+var $testCode = ""0123456789;
 	
 /**
-* Varify all filelds/links present on 'get statred page'
+* Varify all fields/links present on 'get statred page'
 */
 	function GetStartedValidation(){
 		_assertVisible(_emailbox("email"));
@@ -16,11 +17,11 @@ var $testPhone = "1234567891";
 	}
 
 /**
-* Verify appearence of filelds for Users who have  already account or Membership Code
+* Verify appearence of fields for Users who have  already account or Membership Code
 */
 function HaveAccountOrCode(){
-	_click(_link("Click here to login"));
-	_assertVisible(_link("Forgot Your Password?"));
+	_click(_link("Click here to login")); //verify ability to login or recover password
+	_assertVisible(_link("Forgot Your Password?")); //if 'Click here to login' clicked 'Forgot Your Passsword' has to appear
 	_assertVisible(_submit("Login"));
 	_click(_link("Get Started Here"));
 	_assertNotVisible(_link("Forgot Your Password?"));
@@ -44,7 +45,7 @@ function ValidateEmailZipCode(){
 	_click(_submit("Go"));
 	_setValue(_telephonebox("zip"), $testZip);
 	_assertNotVisible(_telephonebox("/form-control ng-pristine/"));
-	_setValue(_textbox("giftCode"), "1234567890");
+	_setValue(_textbox("giftCode"), $testCode);
 	_click(_submit("Redeem Code"));
 	_assertVisible(_paragraph("/enter a valid/"));
 	//_assertVisible(_submit("Loading..."));
