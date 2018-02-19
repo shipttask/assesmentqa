@@ -1,4 +1,4 @@
-# Run GetStarted automation
+# Run GetStarted forms verificaion automation
 1. Download Sahi framework from http://sahipro.com/
 or the direct link http://sahipro.com/static/builds/pro/install_sahi_pro_v750_20171222.jar
 2. Istall Sahi Test Framework, after first run install the license  (license.data).
