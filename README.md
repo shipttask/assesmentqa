@@ -54,7 +54,7 @@ or the direct link http://sahipro.com/static/builds/pro/install_sahi_pro_v750_20
 2. Istall Sahi Test Framework, after first run install the license  (license.data).
 3. Put the file shipt_trial.sah into /sahi_pro/userdata/scripts folder
 4. Start testrunner.sh with these parameters:
-./testrunner.sh shipt_trial.sah https://google.com firefox
+./testrunner.sh shipt_trial.sah https://google.com firefox  (trial_testrunner.gif)
 5. After the test scipt finishes, navigate to Sahi Logs to verify results.
 
 # 6.
