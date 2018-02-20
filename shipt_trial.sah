@@ -2,19 +2,19 @@ var $siteUrl = "https://www.shipt.com";
 var $testEmail = "testmail@gmail.com";
 var $testZip = "35205";
 var $testPhone = "1234567891";
-var $testCode = ""0123456789;
+var $testCode = "0123456789";
 	
 /**
 * Verify all fields/links present on 'get statred page'
 */
-	function GetStartedValidation(){
-		_assertVisible(_emailbox("email"));
-		_assertVisible(_telephonebox("zip"));
-		_assertVisible(_heading1("/get started/"));
-		_assertVisible(_submit("Go"));
-		_assertVisible(_link("Click here to login"));
-		_assertVisible(_link("Click here"));
-	}
+function GetStartedValidation(){
+	_assertVisible(_emailbox("email"));
+	_assertVisible(_telephonebox("zip"));
+	_assertVisible(_heading1("/get started/"));
+	_assertVisible(_submit("Go"));
+	_assertVisible(_link("Click here to login"));
+	_assertVisible(_link("Click here"));
+}
 
 /**
 * Verify appearence of fields for Users who have  already account or Membership Code
